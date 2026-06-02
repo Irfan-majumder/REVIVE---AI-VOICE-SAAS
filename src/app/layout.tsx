@@ -25,16 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
     <html lang="en">
       <body
         className={`${inter.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-
-        <Toaster />
+        <ClerkProvider>
+          {children}
+          <Toaster />
+        </ClerkProvider>
       </body>
     </html>
-    </ClerkProvider>
   );
 }
